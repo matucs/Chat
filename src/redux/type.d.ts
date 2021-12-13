@@ -1,7 +1,6 @@
 
 export interface IMessage {
   date: string;
-  username: string;
   text: string;
 }
 export interface IChannel {

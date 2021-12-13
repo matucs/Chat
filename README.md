@@ -1,6 +1,6 @@
 # Message board project
 
-This project created as a messenger board sample.
+This project created as a messenger board sample. The Message board use a simple rate limitaion protection which is protect from more that a specified request from a same IP address to the server and alse a simple spam detection which is doesn't let clients use spame talk (in this sample spam words are some fruits name like apple, pear, watermelon,...) in their chats. 
 Nodejs, React, Redux, Thunk are technologies that hase been used in the code.
 ![](public/mb.PNG)
 ## Available Scripts
@@ -15,21 +15,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm run mock-api`
+### `npm run dev or npm run prod`
 
 Runs the back-end part.\
 Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
-In this part there are some APIs that the client app could comunicates with.
-- Channel and message storage can be an in-memory database (global variable).
-- On server start, storage is populated with a fixed set of empty channels.
-
-The Apis are:
-- GET endpoint for querying channels
-- GET http://localhost:8080/channels
-- GET endpoint for querying channel’s messages
-- GET http://localhost:8080/messages/javascript
-- POST endpoint for submitting new messages to a channel
-- POST http://localhost:8080/javascript
+In this part client could connect and communicate with socket server.
 
 ### `npm run build`
 

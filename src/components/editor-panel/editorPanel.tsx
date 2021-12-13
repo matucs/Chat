@@ -1,28 +1,27 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { handleEditPannelSuccess } from "../../redux/channel/channelActions";
-import { State } from "../../redux/States";
+import React, {useState } from "react";
+
 
 interface props {
+  active: boolean;
   handleSend: (value: string) => void;
 }
-const EditorPanel: React.FC<props> = ({ handleSend }: props) => {
+const EditorPanel: React.FC<props> = ({ active, handleSend }: props) => {
+  const [inputText, setInputPannel] = useState<string>("");
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
-    dispatch(handleEditPannelSuccess(e.currentTarget.value));
+    setInputPannel(e.currentTarget.value);
   };
   const handleKeyPress = (e: React.KeyboardEvent<{}>) => {
     if (e.key === "Enter") {
       handleSend(inputText);
+      setInputPannel("");
     }
   };
-  const dispatch = useDispatch();
-  const active_channel = useSelector((state: State) => state.active_channel);
-  const inputText = useSelector((state: State) => state.inputText);
+
   return (
     <div className="input-group mb-3 p-2">
-      <input
-        disabled={active_channel ? false : true}
+      <input 
+        disabled={active ? false : true}
         value={inputText}
         onChange={(e) => handleChange(e)}
         onKeyPress={(e) => handleKeyPress(e)}
@@ -34,12 +33,14 @@ const EditorPanel: React.FC<props> = ({ handleSend }: props) => {
       />
       <div className="input-group-append">
         <button
-          disabled={active_channel ? false : true}
-          onClick={() => handleSend(inputText)}
+          disabled={active ? false : true}
+          onClick={() => {
+            handleSend(inputText);
+            setInputPannel("");
+          }}
           className="btn btn-primary"
           type="button"
-          id="button-addon2"
-        >
+          id="button-addon2">
           submit
         </button>
       </div>
