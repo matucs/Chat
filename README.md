@@ -1,6 +1,6 @@
 # Message board project
 
-This project created as a messenger board sample. The Message board use a simple rate limitaion protection which is protect from more that a specified request from a same IP address to the server and alse a simple spam detection which is doesn't let clients use spame talk (in this sample spam words are some fruits name like apple, pear, watermelon,...) in their chats. 
+This project created as a messenger board sample. The Message board use a simple rate limitaion protection which is protect from more that a specified request from a same IP address to the server and alse a simple spam detection which doesn't let clients use spam words in their chat (in this sample spam words are some fruits name like apple, pear, watermelon,...) in their chats. 
 Nodejs, React, Redux, Thunk are technologies that hase been used in the code.
 ![](public/mb.PNG)
 ## Available Scripts
