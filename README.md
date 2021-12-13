@@ -18,7 +18,7 @@ You will also see any lint errors in the console.
 ### `npm run dev or npm run prod`
 
 Runs the back-end part.\
-Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+Open back-end folder in src folder then run the script to open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 In this part client could connect and communicate with socket server.
 
 ### `npm run build`
